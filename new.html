@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nailed By Gomo | Professional Nail Salon</title>
+  <title>Nailed By Gomo | Premium Nail Salon</title>
   <!-- Font Awesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <!-- Google Fonts -->
@@ -14,6 +14,7 @@
       --primary: #ff6f61;
       --primary-light: #ff9a9e;
       --primary-dark: #e85a4f;
+      --secondary: #6b5b95;
       --light: #fff5f5;
       --dark: #333333;
       --text: #4a4a4a;
@@ -201,19 +202,11 @@
       min-height: 700px;
       display: flex;
       align-items: center;
-      background: url('https://images.unsplash.com/photo-1590544848377-897cd2174f1c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+      background: 
+        linear-gradient(135deg, rgba(255, 154, 158, 0.4) 0%, rgba(250, 208, 196, 0.4) 100%),
+        url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
       position: relative;
       margin-top: 68px;
-    }
-    
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.4);
     }
     
     .hero-content {
@@ -228,12 +221,14 @@
       margin-bottom: 20px;
       color: var(--white);
       line-height: 1.2;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
     }
     
     .hero-content p {
       font-size: 1.2rem;
       margin-bottom: 30px;
       opacity: 0.9;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
     }
     
     /* Services Section */
@@ -299,6 +294,20 @@
     /* About Section */
     .about {
       background: var(--white);
+      position: relative;
+    }
+    
+    .about::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%),
+        url('https://images.unsplash.com/photo-1596703269765-68e6f17d2a16?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+      z-index: -1;
     }
     
     .about-content {
@@ -649,13 +658,13 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero Section with nail salon background -->
   <section class="hero" id="home">
     <div class="container">
       <div class="hero-content">
         <h1>Professional Nail Care & Artistry</h1>
         <p>Specializing in manicures, pedicures, and custom nail designs that elevate your style.</p>
-        <a href="#contact" class="btn">Contact Us</a>
+        <a href="#contact" class="btn">Book Your Appointment</a>
       </div>
     </div>
   </section>
@@ -702,7 +711,7 @@
     </div>
   </section>
 
-  <!-- About Section -->
+  <!-- About Section with nail salon background -->
   <section class="section about" id="about">
     <div class="container">
       <div class="section-title">
@@ -819,6 +828,11 @@
           <p>WhatsApp available</p>
         </div>
         <div class="contact-card">
+          <i class="fas fa-envelope"></i>
+          <h3>Email</h3>
+          <p>nailedbygomolemo@gmail.com</p>
+        </div>
+        <div class="contact-card">
           <i class="fas fa-clock"></i>
           <h3>Hours</h3>
           <p>Monday - Friday: 9am - 7pm</p>
@@ -856,7 +870,7 @@
           <h3>Contact Info</h3>
           <p><i class="fas fa-map-marker-alt"></i> 123 Beauty Street, Pretoria</p>
           <p><i class="fas fa-phone-alt"></i> 071 714 4922</p>
-          <p><i class="fas fa-envelope"></i> info@nailedbygomo.com</p>
+          <p><i class="fas fa-envelope"></i> nailedbygomolemo@gmail.com</p>
         </div>
       </div>
       <div class="footer-bottom">
