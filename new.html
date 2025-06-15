@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nailed By Gomo | Premium Nail Salon</title>
+  <title>Nailed By Gomo</title>
   <!-- Font Awesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <!-- Google Fonts -->
@@ -14,7 +14,6 @@
       --primary: #ff6f61;
       --primary-light: #ff9a9e;
       --primary-dark: #e85a4f;
-      --secondary: #6b5b95;
       --light: #fff5f5;
       --dark: #333333;
       --text: #4a4a4a;
@@ -202,11 +201,19 @@
       min-height: 700px;
       display: flex;
       align-items: center;
-      background: 
-        linear-gradient(135deg, rgba(255, 154, 158, 0.4) 0%, rgba(250, 208, 196, 0.4) 100%),
-        url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+      background: url('./img/nails5.jpg') no-repeat center center/cover;
       position: relative;
       margin-top: 68px;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
     }
     
     .hero-content {
@@ -221,14 +228,12 @@
       margin-bottom: 20px;
       color: var(--white);
       line-height: 1.2;
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
     }
     
     .hero-content p {
       font-size: 1.2rem;
       margin-bottom: 30px;
       opacity: 0.9;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
     }
     
     /* Services Section */
@@ -294,29 +299,9 @@
     /* About Section */
     .about {
       background: var(--white);
-      position: relative;
     }
     
-    .about::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: 
-        linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%),
-        url('https://images.unsplash.com/photo-1596703269765-68e6f17d2a16?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
-      z-index: -1;
-    }
-    
-    .about-content {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
-      align-items: center;
-    }
-    
+       
     .about-img {
       border-radius: 10px;
       overflow: hidden;
@@ -329,6 +314,12 @@
       display: block;
     }
     
+.about-text-content {
+    margin-left: 0;
+    padding-right: 20px;
+    max-width: 100%;
+  }
+
     .about-text h2 {
       font-size: 2rem;
       margin-bottom: 20px;
@@ -336,7 +327,9 @@
     }
     
     .about-text p {
-      margin-bottom: 15px;
+      margin-left: 0;
+
+    max-width: 100%;
     }
     
     .about-features {
@@ -579,22 +572,8 @@
       cursor: pointer;
     }
     
-    /* Responsive Design */
-    @media (max-width: 992px) {
-      .about-content {
-        grid-template-columns: 1fr;
-      }
-      
-      .about-img {
-        order: -1;
-      }
-    }
-    
-    @media (max-width: 768px) {
-      .header-container {
-        flex-direction: column;
-        text-align: center;
-      }
+
+
       
       .logo {
         margin-bottom: 15px;
@@ -637,6 +616,30 @@
       .footer-content {
         grid-template-columns: 1fr;
       }
+
+	.whatsapp-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #25D366;
+    color: white !important;
+    border-radius: 50px;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+  
+  .whatsapp-btn:hover {
+    background-color: #128C7E;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+  }
+  
+  .whatsapp-btn i {
+    margin-right: 8px;
+    font-size: 1.2em;
+  }
+
     }
   </style>
 </head>
@@ -658,16 +661,16 @@
     </div>
   </header>
 
-  <!-- Hero Section with nail salon background -->
+  <!-- Hero Section -->
   <section class="hero" id="home">
-    <div class="container">
-      <div class="hero-content">
-        <h1>Professional Nail Care & Artistry</h1>
-        <p>Specializing in manicures, pedicures, and custom nail designs that elevate your style.</p>
-        <a href="#contact" class="btn">Book Your Appointment</a>
-      </div>
+  <div class="container">
+    <div class="hero-content">
+      <h1>Professional Nail Care & Artistry</h1>
+      <p>Specializing in manicures, pedicures, and custom nail designs that elevate your style.</p>
+      <a href="#contact" class="btn">Contact Us</a>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Services Section -->
   <section class="section services" id="services">
@@ -679,39 +682,36 @@
       <div class="service-grid">
         <div class="service-card">
           <div class="service-img">
-            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Manicure">
+            <img src="./img/nails22.jpg" alt="Manicure">
           </div>
           <div class="service-info">
-            <h3>Luxury Manicure</h3>
+            <h3>Manicure</h3>
             <p>Complete nail care including shaping, cuticle treatment, exfoliation, massage, and your choice of polish or gel.</p>
-            <p class="service-price">From R250</p>
-          </div>
+            </div>
         </div>
         <div class="service-card">
           <div class="service-img">
-            <img src="https://images.unsplash.com/photo-1596704017256-9a8a576a7b6f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Pedicure">
+            <img src="./img/pedi3.jpg" alt="Pedicure">
           </div>
           <div class="service-info">
-            <h3>Spa Pedicure</h3>
+            <h3>Pedicure</h3>
             <p>Revitalizing foot treatment with soak, exfoliation, callus removal, massage, and polish application.</p>
-            <p class="service-price">From R300</p>
           </div>
         </div>
         <div class="service-card">
           <div class="service-img">
-            <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Nail Art">
+            <img src="./img/nails66.jpg" alt="Nail Art">
           </div>
           <div class="service-info">
-            <h3>Custom Nail Art</h3>
+            <h3>Nail Art</h3>
             <p>Express your individuality with hand-painted designs, embellishments, and creative techniques.</p>
-            <p class="service-price">From R350</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- About Section with nail salon background -->
+  <!-- About Section -->
   <section class="section about" id="about">
     <div class="container">
       <div class="section-title">
@@ -721,41 +721,10 @@
       <div class="about-content">
         <div class="about-text">
           <h2>Meet Gomo - Nail Specialist</h2>
-          <p>With over 5 years of professional experience, Gomo has perfected the art of nail care and design. What began as a passion for beautiful nails has grown into a dedicated salon focused on quality and creativity.</p>
+          <p>Gomo has perfected the art of nail care and design. What began as a passion for beautiful nails has grown into a dedicated salon focused on quality and creativity.</p>
           <p>At Nailed By Gomo, we combine technical expertise with artistic vision to deliver results that are both beautiful and long-lasting. Our commitment to hygiene and quality products ensures your nails stay healthy while looking their best.</p>
-          <div class="about-features">
-            <div class="feature-item">
-              <div class="feature-icon">
-                <i class="fas fa-check-circle"></i>
-              </div>
-              <div>
-                <h4>Certified Professional</h4>
-                <p>Fully qualified with ongoing education in the latest techniques</p>
-              </div>
-            </div>
-            <div class="feature-item">
-              <div class="feature-icon">
-                <i class="fas fa-spa"></i>
-              </div>
-              <div>
-                <h4>Premium Products</h4>
-                <p>Only the highest quality polishes, gels, and care products</p>
-              </div>
-            </div>
-            <div class="feature-item">
-              <div class="feature-icon">
-                <i class="fas fa-heart"></i>
-              </div>
-              <div>
-                <h4>Sanitation Focus</h4>
-                <p>Strict sterilization protocols for your safety</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="about-img">
-          <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Nail technician working">
-        </div>
+                </div>
+        
       </div>
     </div>
   </section>
@@ -768,80 +737,100 @@
         <p>Browse our nail designs for inspiration</p>
       </div>
       <div class="gallery-grid">
-        <div class="gallery-item" onclick="openModal('https://images.unsplash.com/photo-1596704017256-9a8a576a7b6f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')">
-          <img src="https://images.unsplash.com/photo-1596704017256-9a8a576a7b6f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Nail Design 1">
+        <div class="gallery-item" onclick="openModal('./img/nails1.jpg')">
+          <img src="./img/nails1.jpg" alt="Nail Design 1">
           <div class="gallery-overlay">
             <i class="fas fa-search-plus"></i>
           </div>
         </div>
-        <div class="gallery-item" onclick="openModal('https://images.unsplash.com/photo-1604654894610-df63bc536371?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')">
-          <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Nail Design 2">
+        <div class="gallery-item" onclick="openModal('./img/nails2.jpg')">
+          <img src="./img/nails2.jpg" alt="Nail Design 2">
           <div class="gallery-overlay">
             <i class="fas fa-search-plus"></i>
           </div>
         </div>
-        <div class="gallery-item" onclick="openModal('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')">
-          <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Nail Design 3">
+        <div class="gallery-item" onclick="openModal('./img/nails3.jpg')">
+          <img src="./img/nails3.jpg" alt="Nail Design 3">
           <div class="gallery-overlay">
             <i class="fas fa-search-plus"></i>
           </div>
         </div>
-        <div class="gallery-item" onclick="openModal('https://images.unsplash.com/photo-1608248543803-ba9b8e1a1374?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')">
-          <img src="https://images.unsplash.com/photo-1608248543803-ba9b8e1a1374?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Nail Design 4">
+        <div class="gallery-item" onclick="openModal('./img/nails4.jpg')">
+          <img src="./img/nails4.jpg" alt="Nail Design 4">
           <div class="gallery-overlay">
             <i class="fas fa-search-plus"></i>
           </div>
         </div>
-        <div class="gallery-item" onclick="openModal('https://images.unsplash.com/photo-1603712725038-e9334ae8f39f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')">
-          <img src="https://images.unsplash.com/photo-1603712725038-e9334ae8f39f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Nail Design 5">
+        <div class="gallery-item" onclick="openModal('./img/nails5.jpg')">
+          <img src="./img/nails5.jpg" alt="Nail Design 5">
           <div class="gallery-overlay">
             <i class="fas fa-search-plus"></i>
           </div>
         </div>
-        <div class="gallery-item" onclick="openModal('https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')">
-          <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Nail Design 6">
+        <div class="gallery-item" onclick="openModal('./img/nails6.jpg')">
+          <img src="./img/nails6.jpg" alt="Nail Design 6">
           <div class="gallery-overlay">
             <i class="fas fa-search-plus"></i>
           </div>
         </div>
+
+  <div class="gallery-item" onclick="openModal('./img/pedi1.jpg')">
+          <img src="./img/pedi1.jpg" alt="Nail Design 5">
+          <div class="gallery-overlay">
+            <i class="fas fa-search-plus"></i>
+          </div>
+        </div>
+
+  <div class="gallery-item" onclick="openModal('./img/pedi2.jpg')">
+          <img src="./img/pedi2.jpg" alt="Nail Design 5">
+          <div class="gallery-overlay">
+            <i class="fas fa-search-plus"></i>
+          </div>
+        </div>
+
+  <div class="gallery-item" onclick="openModal('./img/pedi3.jpg')">
+          <img src="./img/pedi3.jpg" alt="Nail Design 5">
+          <div class="gallery-overlay">
+            <i class="fas fa-search-plus"></i>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section class="section contact" id="contact">
-    <div class="container">
-      <div class="section-title">
-        <h2>Visit Us</h2>
-        <p>Book your nail appointment today</p>
+ <section class="section contact" id="contact">
+  <div class="container">
+    <div class="section-title">
+      <h2>Visit Us</h2>
+      <p>Book your nail appointment today</p>
+    </div>
+    <div class="contact-info">
+      <div class="contact-card">
+        <i class="fas fa-map-marker-alt"></i>
+        <h3>Location</h3>
+        <p>North West<br>Klerksdorp & Rustenburg</p>
       </div>
-      <div class="contact-info">
-        <div class="contact-card">
-          <i class="fas fa-map-marker-alt"></i>
-          <h3>Location</h3>
-          <p>123 Beauty Street<br>Pretoria, South Africa</p>
-        </div>
-        <div class="contact-card">
-          <i class="fas fa-phone-alt"></i>
-          <h3>Phone</h3>
-          <p>071 714 4922</p>
-          <p>WhatsApp available</p>
-        </div>
-        <div class="contact-card">
-          <i class="fas fa-envelope"></i>
-          <h3>Email</h3>
-          <p>nailedbygomolemo@gmail.com</p>
-        </div>
-        <div class="contact-card">
-          <i class="fas fa-clock"></i>
-          <h3>Hours</h3>
-          <p>Monday - Friday: 9am - 7pm</p>
-          <p>Saturday: 9am - 4pm</p>
-          <p>Sunday: Closed</p>
-        </div>
+      <div class="contact-card">
+        <i class="fas fa-phone-alt"></i>
+        <h3>Phone</h3>
+        <p>071 714 4922</p>
+        <p>WhatsApp available</p>
+        <a href="https://wa.me/27717144922" class="whatsapp-btn" target="_blank">
+          <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+        </a>
+      </div>
+      <div class="contact-card">
+        <i class="fas fa-clock"></i>
+        <h3>Hours</h3>
+        <p>Monday - Friday: 10am - 7pm</p>
+        <p>Saturday: 10am - 4pm</p>
+        <p>Sunday: Closed</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Footer -->
   <footer>
@@ -849,7 +838,7 @@
       <div class="footer-content">
         <div class="footer-col">
           <h3>Nailed By Gomo</h3>
-          <p>Professional nail care and artistry services in Pretoria. Specializing in manicures, pedicures, and custom nail designs.</p>
+          <p>Professional nail care and artistry services in North West. Specializing in manicures, pedicures, and custom nail designs.</p>
           <div class="social-links">
             <a href="https://wa.me/+27717144922" target="_blank"><i class="fab fa-whatsapp"></i></a>
             <a href="https://instagram.com/nailedbygomo" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -868,7 +857,7 @@
         </div>
         <div class="footer-col footer-contact">
           <h3>Contact Info</h3>
-          <p><i class="fas fa-map-marker-alt"></i> 123 Beauty Street, Pretoria</p>
+          <p><i class="fas fa-map-marker-alt"></i> North West, Klerksdorp & Rustenburg</p>
           <p><i class="fas fa-phone-alt"></i> 071 714 4922</p>
           <p><i class="fas fa-envelope"></i> nailedbygomolemo@gmail.com</p>
         </div>
